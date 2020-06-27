@@ -37,9 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
-    'stock.apps.StockConfig',
-    'TimingTasks.apps.TimingtasksConfig'
+    'rest_framework',  # 这个需要学
+    'stock.apps.StockConfig',  # 建立了一个App叫stock
+    'TimingTasks.apps.TimingtasksConfig'  # 建立了一个App叫TimingTasks
 ]
 
 MIDDLEWARE = [
@@ -76,10 +76,11 @@ WSGI_APPLICATION = 'SmartCloud.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# 这是在自己机器上run了一个后台，需要改成阿里云的
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'sc_stock',
+        'ENGINE': 'django.db.backends.mysql',  # 这句没问题
+        'NAME': 'sc_stock',  # 需要建立一个类似reservation的table，先看看view怎么实现的吧
         'HOST':'127.0.0.1',
         'PORT':3306,
         'USER':'root',
@@ -112,7 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'UTC'  # 要不要换成'Asia/Beijing'
 
 USE_I18N = True
 
